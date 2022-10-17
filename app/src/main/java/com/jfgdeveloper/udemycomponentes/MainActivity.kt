@@ -15,6 +15,7 @@ import com.jfgdeveloper.udemycomponentes.colum.MyColums
 import com.jfgdeveloper.udemycomponentes.comobinado.Combinado
 import com.jfgdeveloper.udemycomponentes.progresbar.MyProgressBar
 import com.jfgdeveloper.udemycomponentes.row.MyRows
+import com.jfgdeveloper.udemycomponentes.swith.MySwitch
 import com.jfgdeveloper.udemycomponentes.ui.theme.UdemyComponentesTheme
 
 class MainActivity : ComponentActivity() {
@@ -32,7 +33,8 @@ class MainActivity : ComponentActivity() {
                     //MyRows()
                     //Combinado()
                     //Estados()
-                    MyProgressBar()
+                    //MyProgressBar()
+                    MySwitch()
                 }
             }
         }
