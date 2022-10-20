@@ -3,25 +3,22 @@ package com.jfgdeveloper.udemycomponentes
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.jfgdeveloper.udemycomponentes.box.MyBox
-import com.jfgdeveloper.udemycomponentes.colum.MyColums
-import com.jfgdeveloper.udemycomponentes.comobinado.Combinado
-import com.jfgdeveloper.udemycomponentes.progresbar.MyProgressBar
-import com.jfgdeveloper.udemycomponentes.row.MyRows
-import com.jfgdeveloper.udemycomponentes.swith.MySwitch
+import com.jfgdeveloper.udemycomponentes.chekbox.MyListCheckBox
+import com.jfgdeveloper.udemycomponentes.chekbox.getCheckBox
 import com.jfgdeveloper.udemycomponentes.ui.theme.UdemyComponentesTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+
+            val items = getCheckBox(titles = listOf("Mujer", "Hombre", "SD"))
+
             UdemyComponentesTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
@@ -34,7 +31,16 @@ class MainActivity : ComponentActivity() {
                     //Combinado()
                     //Estados()
                     //MyProgressBar()
-                    MySwitch()
+                    //MySwitch()
+                    //MyCheckbox()
+
+                    Column {
+                        items.forEach{
+                            MyListCheckBox(checkInfo = it)
+                        }
+                    }
+
+
                 }
             }
         }
